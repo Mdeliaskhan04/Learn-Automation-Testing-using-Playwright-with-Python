@@ -29,6 +29,8 @@ jobs:
     
     - name: Run Playwright tests
       run: pytest
+      env:
+        DISPLAY: :99
     
     - name: Upload test results
       uses: actions/upload-artifact@v4
@@ -38,4 +40,5 @@ jobs:
         path: |
           playwright-report/
           test-results/
+          report.html
         retention-days: 30 
