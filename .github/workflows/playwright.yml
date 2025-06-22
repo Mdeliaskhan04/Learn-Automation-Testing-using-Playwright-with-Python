@@ -24,10 +24,10 @@ jobs:
         pip install -r requirements.txt
         pip install pytest-playwright
     
-    - name: Install Playwright Browsers
-      run: playwright install --with-deps
-    
-    - name: Run Playwright tests
+    - name: Install Playwright dependencies
+      run: python -m playwright install --with-deps
+
+    - name: Run tests
       run: pytest
       env:
         DISPLAY: :99
