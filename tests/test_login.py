@@ -7,6 +7,8 @@ def test_valid_login(page: Page):
     page.fill("input[name='password']","Password123")
     page.screenshot(path="screenshot1.png")
     page.click("#submit")
+    assert page.title()=="Logged In Successfully"
+    assert page.url()=="https://practicetestautomation.com/logged-in-successfully/"
     assert "Logged In Successfully" in page.text_content("h1")
     page.screenshot(path="screenshot2.png")
 

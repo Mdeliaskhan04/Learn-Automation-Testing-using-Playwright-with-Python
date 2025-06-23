@@ -14,7 +14,6 @@ def run(playwright: Playwright) -> None:
     page.get_by_role("button", name="Submit").click()
     page.get_by_role("heading", name="Logged In Successfully").click()
     page.screenshot(path="login.png")
-    page.get_by_role("link", name="Log out").click()
 
     # ---------------------
     print(page.title())
